@@ -78,7 +78,7 @@ localparam CONF_STR = {
 	"O2,Orientation,Vert,Horz;",
 	"O35,Scandoubler Fx,None,HQ2x,CRT 25%,CRT 50%,CRT 75%;",
 	"-;",
-	"O8A,Difficulty,Standerd,1-Easist,2,3,4,5,6,7-Hardest;",
+	"O8A,Difficulty,Standard,1-Easiest,2,3,4,5,6,7-Hardest;",
 	"OBC,Life,3,2,4,5;",
 	"ODF,Bonus Life,M0,M1,M2,M3,M4,M5,M6,M7;",
 	"OG,Round Advance,Off,On;",

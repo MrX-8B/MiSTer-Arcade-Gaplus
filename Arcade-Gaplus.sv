@@ -266,16 +266,6 @@ assign AUDIO_S = 0; // unsigned PCM
 
 wire iRST = RESET | status[0] | buttons[1] | ioctl_download;
 
-wire ORIENT = status[2];
-
-function [3:0] STKROT;
-input O;
-input [3:0] STK;
-
-	STKROT = O ? {STK[2],STK[1],STK[0],STK[3]} : STK;
-
-endfunction
-
 wire  [1:0] COIA = 2'b00;				// 1coin/1credit
 wire  [1:0] COIB = 2'b00;				// 1coin/1credit
 
@@ -291,8 +281,8 @@ wire  [7:0] DSW0 = {LIFE,COIA,DEMO,1'b0,COIB};
 wire  [7:0] DSW1 = {SERV,DIFF,ADVN,EXTD};
 wire	[7:0] DSW2 = {6'h0,~SERV,~CABI};
 
-wire  [4:0]	INP0 = { m_trig11, STKROT(ORIENT,{m_left1, m_down1, m_right1, m_up1})};
-wire  [4:0]	INP1 = { m_trig21, STKROT(ORIENT,{m_left2, m_down2, m_right2, m_up2})};
+wire  [4:0]	INP0 = { m_trig11, m_left1, m_down1, m_right1, m_up1 };
+wire  [4:0]	INP1 = { m_trig21, m_left2, m_down2, m_right2, m_up2 };
 wire	[2:0]	INP2 = { (m_coin1|m_coin2), m_start2, m_start1 };
 
 
